@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tablet.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Youdl • Download Youtube Videos Easily</title>
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <div class="navbar special-bg">
+      <div class="container flex">
+          <h1 class="logo">You.dl</h1>
+          <nav>
+              <ul>
+                <li><a href="features.html" class="join">Join</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+              </ul>
+          </nav>
+      </div>
+  </div>
+
+
+    <!-- docs head -->
+    <section class="docs-head bg-primary py-3">
+      <div class="container grid">
+        <div class="">
+          <h1 class="xl">Documentation</h1>
+          <p class="lead">
+            Learn to use the You.dl platfom
+          </p>
+        </div>
+        <img src="./images/experience.png" alt="">
+      </div>
+    </section>
+
+    <!-- Docs Main -->
+    <section class="docs-main">
+      <div class="container grid py-5">
+        <div class="card bg-light p-3">
+          <h3 class="my-2">Essentials</h3>
+          <nav class="menu">
+            <ul>
+              <li><a href="#intro" class="text-primary">Get Started</a></li>
+              <li><a href="#intro">About You.dl</a></li>
+              <li><a href="#install">Installation</a></li>
+            </ul>
+          </nav>
+
+          <div class="deploy">
+            <h3 class="my-2">Usage</h3>
+            <nav class="menu">
+              <ul>
+                <li><a href="#account">Setting up an account</a></li>
+                <li><a href="#api-key">Getting an API Key</a></li>
+                <li><a href="#api-usage">Using the API</a></li>
+                <li><a href="#cli">Setting up CLI</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+          <!-- Introduction -->
+            <div id="intro" class="intro">
+              <h3>Introduction</h3>
+              <p>
+                You.dl is a youtube video downloading utility that makes downloading videos a lot easier than most other platforms.
+                You can use the platform itself to do that or create an account, <br /> get an api key and enjoy the unlimited number of requests.
+                You can either do a full check on all available formats for the specific video or specify a single format to check for.
+                all of which is explained thoroughly in the <a href="#api-usage" class="text-primary">Using the API</a> section.
+              </p>
+
+              <div class="alert alert-success">
+                <i class="fas fa-info"></i>
+                Creating an account and using the API is highly recommended.
+              </div>
+
+              <div class="my-2">
+                <h3>We Also Have a Great CLI</h3>
+                <p>Our team managed to create a CLI as well, making our service even more friendly.</p>
+                <a href="#" class="btn btn-primary">Install CLI</a>
+              </div>
+            </div>
+
+
+            <!-- Requirements -->
+            <div class="requirements my-3">
+              <h3>Requirements</h3>
+              <nav>
+                <ul>
+                  <li class="text-dim">Windows 10 • Mac OSX • Linux</li>
+                  <li class="text-dim">Node.js 12 or Higher (for CLI)</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Getting an API Key -->
+            <div id="api-key" class="api-key my-4">
+              <h3>Generate an API Key Now</h3>
+              <p>The API key is used to authorize your access to our platform and service.</p>
+              <button class="btn btn-success generate-key">Generate Key</button>
+            </div>
+
+
+            <!-- Using the API -->
+            <div id="api-usage" class="api-usage">
+
+              <h3>Overview</h3>
+              <p>
+                Using the API is actually pretty direct and easy,
+                all you need is your preferred programming language and a simple http client and you're all set.
+              </p>
+
+              <!-- connection to server -->
+              <div class="connection my-2">
+                <h3>Authorization</h3>
+                <p>
+                  With the given API key, you can simply use the service in an authorized manner, provided that you add the
+                  <span class="text-primary">Authorization</span> header with your key as shown below.
+                </p>
+
+                <pre class="bg-dark" style="padding: 10px;font-weight: lighter;"><code><span class="text-primary">Authorization</span>: <span class="text-dim">token</span> <span class="text-success">0d107d09f5bbe40cade3de5c71e9e9b7</span></code></pre>
+              </div>
+
+              <!-- requests -->
+              <div class="requests my-4">
+                <h3>Requests and Responses</h3>
+
+                <ul>
+
+                  <li>
+                    <p>Fetch video details with all or a specific format using the parameter (format).</p>
+                    <pre class="bg-dark" style="padding: 10px;font-weight: lighter; font-size: 8px;"><code><span class="text-light-green">GET</span><span class="text-dim"> /fetch/<span class="text-light-yellow">{video_id}</span>/all</span></code></pre>
+                  </li>
+
+                  <li class="my-1">
+                    <div class="flex dom">
+                      <pre class="bg-dark" style="padding: 10px;font-weight: lighter;"><code><span class="text-light-green">GET</span><span class="text-dim"> /fetch/<span class="text-light-yellow">{video_id}</span>/{format}</span></code></pre>
+                      <pre class="bg-dark p-1"><code>140p, 240p, 360p, 480p, 720p, 1080p</code></pre>
+                    </div>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+              <!-- example request -->
+              <div class="example my-4">
+                <h3>Example request made with node.js</h3>
+
+                <div class="img-container">
+                  <img class="request" src="./images/snippets/node.png" alt="">
+                </div>
+
+              </div>
+
+              <!-- example response -->
+              <div class="example">
+                <h3>Expected response from API</h3>
+
+                <p class="text-dim">On Success</p>
+                <div class="img-container">
+                  <img class="success" src="./images/snippets/success.png" alt="">
+                </div>
+
+                <p class="text-dim">On Error</p>
+                <div class="img-container">
+                  <img class="error" src="./images/snippets/error.png" alt="">
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Using The CLI -->
+            <div id="cli-usage" class="cli-usage mt-4">
+              <h3>Simplified CLI</h3>
+              <p>
+                The CLI itself uses the same methodology you would use in your own programming language.
+                <li class="text-dim">Connect to API.</li>
+                <li class="text-dim">Get the API key.</li>
+                <li class="text-dim">Store it in Envirenment Variables.</li>
+                <li class="text-dim">Sending and receiving information to and from API.</li>
+              </p>
+
+              <div class="my-3">
+                <p>Installation</p>
+
+                <div class="grid grid-4">
+                  <pre class="text-center text-upper bg-dark p-1"><code>Brew</code></pre>
+                  <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">brew</span> install <span class="text-light-green">youdl-cli</span></code></pre>
+
+                  <pre class="text-center text-upper bg-dark p-1"><code>NPM</code></pre>
+                  <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">npm</span> install <span class="text-light-green">youdl-cli</span></code></pre>
+
+                  <pre class="text-center text-upper bg-dark p-1"><code>Yarn</code></pre>
+                  <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">yarn</span> install <span class="text-light-green">youdl-cli</span></code></pre>
+                </div>
+
+              </div>
+
+              <div class="my-1">
+                <p>Authenticate</p>
+                <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">youdl</span> --login <span class="text-light-green">{username}:{password}</span> --store</code></pre>
+              </div>
+
+              <div class="my-1">
+                <p>To show the API Key</p>
+                <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">youdl</span> --key</code></pre>
+              </div>
+
+              <div class="my-1">
+                <p>Get all available formats</p>
+                <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">youdl</span> --vid <span class="text-light-green">{video_id}</span> --all</code></pre>
+              </div>
+
+              <div class="my-1">
+                <p>Get a specific format</p>
+                <pre class="bg-dark p-1"><code>$ <span class="text-light-yellow">youdl</span> --vid <span class="text-light-green">{video_id}</span> --format {format}</code></pre>
+              </div>
+
+
+              <div class="wrapper sm bg-light p-1">
+                <p>The response to the CLI will be the same as with API, a nicely wrapped json object with all the video details.</p>
+              </div>
+
+            </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- footer -->
+    <section class="footer bg-dark footer-bg py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>You.dl</h1>
+                <p>Copyright &copy; 2020</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Join</a></li>
+                    <li><a href="index.html">Account</a></li>
+                    <li><a href="index.html">Documentation</a></li>
+                </ul>
+            </nav>
+
+            <div class="social">
+                <a href="#">a<i class="fab fa-github fa-2x"></i></a>
+                <a href="#">a<i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#">a<i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#">a<i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="./js/script.js" charset="utf-8"></script>
+</body>
+</html>
