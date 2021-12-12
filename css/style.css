@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 @import url('./utilities.css');
 @import url('./animations.css');
 
@@ -16,7 +17,8 @@
 }
 
 body {
-    font-family: 'Tajawal Medium', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -34,7 +36,7 @@ a {
 }
 
 h1, h2 {
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.2;
     margin: 10px 0;
 }
